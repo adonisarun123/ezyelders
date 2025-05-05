@@ -1,0 +1,320 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header & Navigation */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    /* Glassmorphism Background */
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px; /* Add space below header */
+}
+
+.logo img {
+    height: 50px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #E6007E; /* Pink from logo */
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 100%;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #E6007E; /* Pink from logo */
+}
+
+/* Main Content */
+main {
+    padding: 20px 0;
+    animation: slideUp 0.8s ease-out;
+}
+
+/* Hero Section (Index Page) */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('img/hero-background.jpg'); /* Optional background image */
+    background-size: cover;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    animation: zoomIn 0.7s ease-out;
+}
+
+.hero h1 {
+    font-size: 2.8em;
+    color: #E6007E;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    color: #00AEEF;
+}
+
+/* Overview Section (Index Page) */
+.overview h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #00AEEF;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    /* Glassmorphism Card */
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 25px;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: popUp 0.5s ease-out backwards;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #E6007E;
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin-bottom: 0;
+    font-size: 0.95em;
+    color: #555;
+}
+
+/* Generic Content Page Styles */
+.content-page main {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+.content-page h1, .content-page h2, .content-page h3, .content-page h4 {
+    color: #00AEEF; /* Blue from logo */
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+}
+
+.content-page h1 {
+    color: #E6007E; /* Pink for main titles */
+    text-align: center;
+    margin-top: 0;
+}
+
+.content-page ul, .content-page ol {
+    padding-left: 20px;
+}
+
+.content-page li {
+    margin-bottom: 10px;
+}
+
+.content-page strong {
+    color: #E6007E;
+}
+
+.content-page code {
+    background-color: #f0f0f0;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: monospace;
+}
+
+.content-page pre {
+    background-color: #f8f8f8;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    border: 1px solid #eee;
+}
+
+/* Table Styles */
+.content-page table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+}
+
+.content-page th, .content-page td {
+    border: 1px solid #ddd;
+    padding: 10px 12px;
+    text-align: left;
+}
+
+.content-page th {
+    background-color: rgba(0, 174, 239, 0.1); /* Light Blue */
+    color: #00AEEF;
+    font-weight: 600;
+}
+
+.content-page tr:nth-child(even) {
+    background-color: rgba(230, 0, 126, 0.03); /* Faint Pink */
+}
+
+.content-page tr:hover {
+    background-color: rgba(0, 174, 239, 0.08);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    color: #777;
+    font-size: 0.9em;
+    border-top: 1px solid #eee;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes popUp {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Add animation delays for cards */
+.card-container .card:nth-child(1) { animation-delay: 0.1s; }
+.card-container .card:nth-child(2) { animation-delay: 0.2s; }
+.card-container .card:nth-child(3) { animation-delay: 0.3s; }
+.card-container .card:nth-child(4) { animation-delay: 0.4s; }
+.card-container .card:nth-child(5) { animation-delay: 0.5s; }
+.card-container .card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap; /* Allow nav items to wrap */
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-right: 15px;
+        margin-bottom: 10px; /* Space when wrapping */
+    }
+
+    .hero h1 {
+        font-size: 2.2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .card-container {
+        grid-template-columns: 1fr; /* Stack cards on smaller screens */
+    }
+
+    .content-page main {
+        padding: 20px;
+    }
+
+     .content-page table {
+        font-size: 0.9em;
+    }
+
+    .content-page th, .content-page td {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+     nav ul li {
+        margin-right: 10px;
+    }
+    nav ul li a {
+        font-size: 0.9em;
+    }
+} 
